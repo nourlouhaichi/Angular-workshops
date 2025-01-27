@@ -1,0 +1,15 @@
+
+<input type="text" [(ngModel)] = "search" >
+<hr>
+<div class="row">
+    <div *ngFor="let i of searchName()" class="card" style="width: 18rem;">
+        <img [src]="i.image" alt="jpg" class="card-img-top">
+        <div class="card-body">
+        <h4 class="card-title">{{i.name}}</h4>
+        <h5 class="card-title">{{i.status}}</h5>
+        <p class="card-text">{{i.address}}</p>
+        <a href="#" (click)="alert(i)" class="btn btn-primary">Show location </a>
+        </div>
+    </div>
+</div>
+<hr>

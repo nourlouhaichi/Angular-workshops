@@ -7,6 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ResidenceComponent } from './residences/residences.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ApproutingModule } from './approuting.module'; 
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +18,13 @@ import { ResidenceComponent } from './residences/residences.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    ResidenceComponent
+    ResidenceComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ApproutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

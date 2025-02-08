@@ -17,6 +17,6 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule] // No need to declare components here
+  exports: [RouterModule] 
 })
 export class ApproutingModule { }

@@ -1,15 +1,35 @@
-
-<input type="text" [(ngModel)] = "search" >
+<h4>Recherche: <input type="text" [(ngModel)] = "search" > </h4>
 <hr>
+<h2>Liste des Residences</h2>
 <div class="row">
     <div *ngFor="let i of searchName()" class="card" style="width: 18rem;">
         <img [src]="i.image" alt="jpg" class="card-img-top">
         <div class="card-body">
         <h4 class="card-title">{{i.name}}</h4>
-        <h5 class="card-title">{{i.status}}</h5>
+        <!-- <h5 class="card-title">{{i.status}}</h5> -->
+
+        <div [ngSwitch]="i.status">
+            <p *ngSwitchCase="'Disponible'" class="status available">✅ Disponible</p>
+            <p *ngSwitchCase="'En Construction'" class="status construction">🚧 En Construction</p>
+            <p *ngSwitchCase="'Vendu'" class="status sold">❌ Vendu</p>
+            <p *ngSwitchDefault class="status unknown">❓ Statut Inconnu</p>
+        </div>
+
         <p class="card-text">{{i.address}}</p>
-        <a href="#" (click)="alert(i)" class="btn btn-primary">Show location </a>
+        <a href="#" (click)="alert(i)" class="btn btn-primary">Show location</a> &nbsp;
+        <button class="btn btn-success" (click)="addListFavoris(i)">{{isVerif(i) ? "Dislike":"Like"}}</button>
         </div>
     </div>
 </div>
 <hr>
+<h2>Liste des favoris</h2>
+<div class="row">
+    <div *ngFor="let i of listFavoris" class="card" style="width: 18rem;">
+        <img [src]="i.image" alt="jpg" class="card-img-top">
+        <div class="card-body">
+        <h4 class="card-title">{{i.name}}</h4>
+        <h5 class="card-title">{{i.status}}</h5>
+        <p class="card-text">{{i.address}}</p>
+        </div>
+    </div>
+</div>

@@ -42,10 +42,10 @@
         <!-- <h5 class="card-title">{{i.status}}</h5> -->
 
         <div [ngSwitch]="i.status">
-            <p *ngSwitchCase="'Disponible'" class="status available">✅ Disponible</p>
-            <p *ngSwitchCase="'En Construction'" class="status construction">🚧 En Construction</p>
-            <p *ngSwitchCase="'Vendu'" class="status sold">❌ Vendu</p>
-            <p *ngSwitchDefault class="status unknown">❓ Statut Inconnu</p>
+            <p *ngSwitchCase="'Disponible'" class="status available"><i class="fa fa-check-circle"></i> Disponible</p>
+            <p *ngSwitchCase="'En Construction'" class="status construction"><i class="fa fa-hourglass-half"></i> En Construction</p>
+            <p *ngSwitchCase="'Vendu'" class="status sold"><i class="fa fa-times-circle"></i> Vendu</p>
+            <p *ngSwitchDefault class="status unknown"><i class="fa fa-question-circle"></i> Statut Inconnu</p>
         </div>
 
         <p class="card-text">{{i.address}}</p>

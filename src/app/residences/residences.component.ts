@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Residence } from 'src/core/models/residence'
+import { ResidenceService } from '../service/residence.service';
 
 @Component({
   selector: 'app-residence',
@@ -13,6 +14,8 @@ export class ResidenceComponent {
   searchName() {
     return this.listResidences.filter(r=>r.name.toLocaleLowerCase().includes(this.search.toLowerCase()))
   }
+
+  constructor(private reservice:ResidenceService){}
   
   listResidences:Residence[]=[
     {id:1,"name": "El fel","address":"Borj Cedria", "image":"../../assets/images/1.jpg", status: "Disponible"},

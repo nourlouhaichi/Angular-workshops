@@ -30,7 +30,7 @@ export class ResidenceService {
     return this.http.post<Residence>(this.urlResidence, res)
   }
 
-  updateResidence(res:Residence):Observable<Residence>{
+  updateResidence(res:Residence,id:number):Observable<Residence>{
     return this.http.put<Residence>(this.urlResidence + '/' + res.id , res)
   }
 

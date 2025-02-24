@@ -1,0 +1,32 @@
+<form [formGroup]="formR">
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Id</label>
+        <input type="email" class="form-control" formControlName="id" aria-describedby="emailHelp">
+        <div class="alert alert-danger" *ngIf="id?.invalid && id?.touched">Invalid</div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="email" class="form-control" formControlName="name" aria-describedby="emailHelp">
+        <div class="alert alert-danger" *ngIf="name?.invalid && (name?.touched || name?.dirty)">Invalid</div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Address</label>
+        <input type="email" class="form-control" formControlName="address" aria-describedby="emailHelp">
+        <div class="alert alert-danger" *ngIf="address?.errors?.['maxlength']">Invalid</div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Image</label>
+        <input type="email" class="form-control" formControlName="image" aria-describedby="emailHelp">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Status</label>
+        <input type="email" class="form-control" formControlName="status" aria-describedby="emailHelp">
+        <div class="alert alert-danger" *ngIf="status?.invalid && status?.touched">Invalid</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="update()" [disabled]="formR.invalid">Update</button>
+</form>

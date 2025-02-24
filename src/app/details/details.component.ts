@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+import { ResidenceService } from '../service/residence.service'
+import { Residence } from 'src/core/models/residence'
+
 
 @Component({
   selector: 'app-details',
@@ -8,9 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
   id!:number
-  constructor(private act:ActivatedRoute){}
+  listdetails:Residence[]=[]
+  constructor(private act:ActivatedRoute, private resservice:ResidenceService){}
   ngOnInit():void {
     this.id = this.act.snapshot.params['id']
+    this.resservice.getResidence(this.id).subscribe((data)=> {
+    this.listdetails=data
+
+    })
   }
   
 

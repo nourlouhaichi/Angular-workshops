@@ -10,7 +10,8 @@ import { NotfoundComponent } from './notfound/notfound.component'
 import { ApproutingModule } from './approuting.module'
 import { AnnonceModule } from './annonce/annonce.module'
 import { FormresidenceComponent } from './formresidence/formresidence.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './details/details.component'
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http'
     ResidenceComponent,
     NotfoundComponent,
     FormresidenceComponent,
+    DetailsComponent,
     
   ],
   imports: [

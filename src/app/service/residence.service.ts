@@ -34,8 +34,8 @@ export class ResidenceService {
     return this.http.put<Residence>(this.urlResidence + '/' + res.id , res)
   }
 
-  getResidence(id:any):Observable<Residence[]>{
-    return this.http.get<Residence[]>(this.urlResidence + '/' + id)
+  getResidence(id:any):Observable<Residence>{
+    return this.http.get<Residence>(this.urlResidence + '/' + id)
   }
 
   deleteResidence(id:any):Observable<Residence>{

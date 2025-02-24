@@ -11,7 +11,8 @@ import { ApproutingModule } from './approuting.module'
 import { AnnonceModule } from './annonce/annonce.module'
 import { FormresidenceComponent } from './formresidence/formresidence.component'
 import { HttpClientModule } from '@angular/common/http';
-import { DetailsComponent } from './details/details.component'
+import { DetailsComponent } from './details/details.component';
+import { UpdateFormComponent } from './update-form/update-form.component'
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { DetailsComponent } from './details/details.component'
     NotfoundComponent,
     FormresidenceComponent,
     DetailsComponent,
+    UpdateFormComponent,
     
   ],
   imports: [

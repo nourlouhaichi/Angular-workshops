@@ -11,15 +11,12 @@ import { Residence } from 'src/core/models/residence'
 })
 export class DetailsComponent implements OnInit {
   id!:number
-  listdetails:Residence[]=[]
+  listdetails:Residence = new Residence
   constructor(private act:ActivatedRoute, private resservice:ResidenceService){}
   ngOnInit():void {
     this.id = this.act.snapshot.params['id']
     this.resservice.getResidence(this.id).subscribe((data)=> {
     this.listdetails=data
-
     })
   }
-  
-
 }
